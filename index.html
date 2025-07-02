@@ -64,6 +64,34 @@
       font-family: 'Courier New', monospace;
       font-size: 0.9em;
       border: 1px solid #e1e1e1;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      position: relative;
+    }
+    .expression-code:hover {
+      background-color: #e8f4f8;
+      border-color: #3498db;
+    }
+    .expression-code:active {
+      background-color: #d5e8f0;
+    }
+    .copy-feedback {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #2ecc71;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 3px;
+      font-size: 0.8em;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .copy-feedback.show {
+      opacity: 1;
     }
     .motion-section {
       background-color: #f8f9fa;
@@ -186,16 +214,55 @@
   <div class="section">
     <h3>🎯 Quick Reference Tips</h3>
     <ul>
-      <li><strong>Time-based animations:</strong> Use <span class="expression-code">time</span> variable for continuous motion</li>
-      <li><strong>Randomization:</strong> <span class="expression-code">wiggle()</span> and <span class="expression-code">seedRandom()</span> for organic movement</li>
-      <li><strong>Looping:</strong> <span class="expression-code">loopOut()</span> variations for seamless cycles</li>
-      <li><strong>Math functions:</strong> <span class="expression-code">Math.sin()</span>, <span class="expression-code">Math.cos()</span> for smooth oscillations</li>
-      <li><strong>Layer relationships:</strong> Use <span class="expression-code">index</span> and <span class="expression-code">thisComp.layer()</span> for complex animations</li>
+      <li><strong>Click any expression</strong> to copy it to your clipboard! 📋</li>
+      <li><strong>Time-based animations:</strong> Use <span class="expression-code" onclick="copyExpression(this)">time</span> variable for continuous motion</li>
+      <li><strong>Randomization:</strong> <span class="expression-code" onclick="copyExpression(this)">wiggle()</span> and <span class="expression-code" onclick="copyExpression(this)">seedRandom()</span> for organic movement</li>
+      <li><strong>Looping:</strong> <span class="expression-code" onclick="copyExpression(this)">loopOut()</span> variations for seamless cycles</li>
+      <li><strong>Math functions:</strong> <span class="expression-code" onclick="copyExpression(this)">Math.sin()</span>, <span class="expression-code" onclick="copyExpression(this)">Math.cos()</span> for smooth oscillations</li>
+      <li><strong>Layer relationships:</strong> Use <span class="expression-code" onclick="copyExpression(this)">index</span> and <span class="expression-code" onclick="copyExpression(this)">thisComp.layer()</span> for complex animations</li>
     </ul>
   </div>
 </div>
 
 <script>
+  function copyExpression(element) {
+    const text = element.textContent;
+    
+    // Create a temporary textarea to copy the text
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    
+    // Show feedback
+    showCopyFeedback(element);
+  }
+
+  function showCopyFeedback(element) {
+    // Remove any existing feedback
+    const existingFeedback = element.querySelector('.copy-feedback');
+    if (existingFeedback) {
+      existingFeedback.remove();
+    }
+    
+    // Create and show feedback
+    const feedback = document.createElement('div');
+    feedback.className = 'copy-feedback';
+    feedback.textContent = 'Copied!';
+    element.appendChild(feedback);
+    
+    // Show feedback
+    setTimeout(() => feedback.classList.add('show'), 10);
+    
+    // Hide and remove feedback
+    setTimeout(() => {
+      feedback.classList.remove('show');
+      setTimeout(() => feedback.remove(), 300);
+    }, 1500);
+  }
+
   let sortDirection = {};
 
   function sortTable(tableId, columnIndex) {
