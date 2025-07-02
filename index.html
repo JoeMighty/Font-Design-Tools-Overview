@@ -15,6 +15,11 @@
       text-align: center;
       color: #2c3e50;
     }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 0.5em;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -52,69 +57,168 @@
     .sort-desc::after {
       content: " ▼";
     }
+    .expression-code {
+      background-color: #f8f8f8;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      border: 1px solid #e1e1e1;
+    }
+    .motion-section {
+      background-color: #f8f9fa;
+      padding: 2em;
+      border-radius: 8px;
+      margin-top: 3em;
+      border-left: 4px solid #e74c3c;
+    }
+    .nav-menu {
+      text-align: center;
+      margin: 2em 0;
+      padding: 1em;
+      background-color: #ecf0f1;
+      border-radius: 5px;
+    }
+    .nav-menu a {
+      margin: 0 1em;
+      padding: 0.5em 1em;
+      background-color: #3498db;
+      color: white;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+    .nav-menu a:hover {
+      background-color: #2980b9;
+    }
   </style>
 </head>
 <body>
 
-<h1> Font Design Tools Overview</h1>
+<h1>Design Tools Overview</h1>
 
-<table id="fontTable">
-  <thead>
-    <tr>
-      <th onclick="sortTable(0)">Tool</th>
-      <th onclick="sortTable(1)">Platform(s)</th>
-      <th onclick="sortTable(2)">Price</th>
-      <th onclick="sortTable(3)">Type</th>
-      <th onclick="sortTable(4)">Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td><a href="https://glyphsapp.com" target="_blank">Glyphs</a></td><td>macOS</td><td>$ / € 300</td><td>Desktop app</td><td>Professional, industry standard</td></tr>
-    <tr><td><a href="https://glyphsapp.com" target="_blank">Glyphs Mini</a></td><td>macOS</td><td>$ / € 40</td><td>Desktop app</td><td>Affordable entry version</td></tr>
-    <tr><td><a href="https://robofont.com" target="_blank">RoboFont</a></td><td>macOS</td><td>$ / € 500</td><td>Desktop app</td><td>Modular, scriptable</td></tr>
-    <tr><td><a href="https://www.fontlab.com" target="_blank">FontLab</a></td><td>macOS, Windows</td><td>$ / € 500</td><td>Desktop app</td><td>Full-featured professional tool</td></tr>
-    <tr><td><a href="https://www.fontlab.com/font-editor/fontographer/" target="_blank">Fontographer</a></td><td>macOS, Windows</td><td>$ / € 120</td><td>Desktop app</td><td>Obsolete, not recommended</td></tr>
-    <tr><td><a href="https://www.fontlab.com/font-editor/typetool/" target="_blank">TypeTool</a></td><td>macOS, Windows</td><td>$ / € 50</td><td>Desktop app</td><td>Lightweight editor</td></tr>
-    <tr><td><a href="https://www.high-logic.com/" target="_blank">FontCreator</a></td><td>Windows</td><td>$ / € 50–200</td><td>Desktop app</td><td>Feature-rich, Windows only</td></tr>
-    <tr><td><a href="https://www.high-logic.com/" target="_blank">Scanahand</a></td><td>Windows</td><td>$ / € 50</td><td>Desktop app</td><td>Converts handwriting to fonts</td></tr>
-    <tr><td><a href="https://fontforge.github.io" target="_blank">FontForge</a></td><td>Windows, macOS, Linux</td><td>Free (open source)</td><td>Desktop app</td><td>Powerful, steeper learning curve</td></tr>
-    <tr><td><a href="https://birdfont.org" target="_blank">BirdFont</a></td><td>Windows, macOS, Linux, BSD</td><td>Free</td><td>Desktop app</td><td>User-friendly, great for beginners</td></tr>
-    <tr><td><a href="https://www.fontself.com/store" target="_blank">FontSelf</a></td><td>Windows, macOS, iPad</td><td>$ / € 40–80</td><td>Illustrator plugin / iPad app</td><td>Easy font creation in Illustrator</td></tr>
-    <tr><td><a href="https://fontark.net/farkwp/" target="_blank">FontArk</a></td><td>Online (browser)</td><td>Free</td><td>Web app</td><td>Experimental, sign-up required</td></tr>
-    <tr><td><a href="https://www.glyphrstudio.com" target="_blank">Glyphr Studio</a></td><td>Online (browser)</td><td>Free</td><td>Web app</td><td>Great free option</td></tr>
-    <tr><td><a href="https://www.cr8software.net/type.html" target="_blank">Type 3.2</a></td><td>Windows, macOS</td><td>$ / € 40</td><td>Desktop app</td><td>Affordable, straightforward</td></tr>
-    <tr><td><a href="https://fontstruct.com" target="_blank">FontStruct</a></td><td>Online (browser)</td><td>Free</td><td>Web app</td><td>Grid-based font design</td></tr>
-    <tr><td><a href="https://www.calligraphr.com/en/pricing/" target="_blank">Calligraphr</a></td><td>Online (browser)</td><td>Free → $ / € 10/month</td><td>Web app</td><td>Handwriting to font conversion</td></tr>
-  </tbody>
-</table>
+<div class="nav-menu">
+  <a href="#fonts">Font Design Tools</a>
+  <a href="#motion">Motion Design Expressions</a>
+</div>
 
-<div class="section">
-  <h2>✅ Recommendations for Students</h2>
-  <ul>
-    <li><strong>Beginners:</strong> Try <a href="https://birdfont.org" target="_blank">BirdFont</a>, <a href="https://fontstruct.com" target="_blank">FontStruct</a>, <a href="https://www.glyphrstudio.com" target="_blank">Glyphr Studio</a>, or <a href="https://www.calligraphr.com/en/" target="_blank">Calligraphr</a></li>
-    <li><strong>Adobe Users:</strong> <a href="https://www.fontself.com/store" target="_blank">FontSelf</a> works well with Illustrator</li>
-    <li><strong>Mac Users (Advanced):</strong> Consider <a href="https://glyphsapp.com" target="_blank">Glyphs Mini</a> or <a href="https://robofont.com" target="_blank">RoboFont</a></li>
-    <li><strong>Windows Users (Advanced):</strong> <a href="https://www.high-logic.com/" target="_blank">FontCreator</a> or <a href="https://www.fontlab.com" target="_blank">FontLab</a></li>
-    <li><strong>Open Source Fans:</strong> <a href="https://fontforge.github.io" target="_blank">FontForge</a> is free and powerful</li>
-  </ul>
+<div id="fonts" class="section">
+  <h2>Font Design Tools</h2>
+  
+  <table id="fontTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable('fontTable', 0)">Tool</th>
+        <th onclick="sortTable('fontTable', 1)">Platform(s)</th>
+        <th onclick="sortTable('fontTable', 2)">Price</th>
+        <th onclick="sortTable('fontTable', 3)">Type</th>
+        <th onclick="sortTable('fontTable', 4)">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="https://glyphsapp.com" target="_blank">Glyphs</a></td><td>macOS</td><td>$ / € 300</td><td>Desktop app</td><td>Professional, industry standard</td></tr>
+      <tr><td><a href="https://glyphsapp.com" target="_blank">Glyphs Mini</a></td><td>macOS</td><td>$ / € 40</td><td>Desktop app</td><td>Affordable entry version</td></tr>
+      <tr><td><a href="https://robofont.com" target="_blank">RoboFont</a></td><td>macOS</td><td>$ / € 500</td><td>Desktop app</td><td>Modular, scriptable</td></tr>
+      <tr><td><a href="https://www.fontlab.com" target="_blank">FontLab</a></td><td>macOS, Windows</td><td>$ / € 500</td><td>Desktop app</td><td>Full-featured professional tool</td></tr>
+      <tr><td><a href="https://www.fontlab.com/font-editor/fontographer/" target="_blank">Fontographer</a></td><td>macOS, Windows</td><td>$ / € 120</td><td>Desktop app</td><td>Obsolete, not recommended</td></tr>
+      <tr><td><a href="https://www.fontlab.com/font-editor/typetool/" target="_blank">TypeTool</a></td><td>macOS, Windows</td><td>$ / € 50</td><td>Desktop app</td><td>Lightweight editor</td></tr>
+      <tr><td><a href="https://www.high-logic.com/" target="_blank">FontCreator</a></td><td>Windows</td><td>$ / € 50–200</td><td>Desktop app</td><td>Feature-rich, Windows only</td></tr>
+      <tr><td><a href="https://www.high-logic.com/" target="_blank">Scanahand</a></td><td>Windows</td><td>$ / € 50</td><td>Desktop app</td><td>Converts handwriting to fonts</td></tr>
+      <tr><td><a href="https://fontforge.github.io" target="_blank">FontForge</a></td><td>Windows, macOS, Linux</td><td>Free (open source)</td><td>Desktop app</td><td>Powerful, steeper learning curve</td></tr>
+      <tr><td><a href="https://birdfont.org" target="_blank">BirdFont</a></td><td>Windows, macOS, Linux, BSD</td><td>Free</td><td>Desktop app</td><td>User-friendly, great for beginners</td></tr>
+      <tr><td><a href="https://www.fontself.com/store" target="_blank">FontSelf</a></td><td>Windows, macOS, iPad</td><td>$ / € 40–80</td><td>Illustrator plugin / iPad app</td><td>Easy font creation in Illustrator</td></tr>
+      <tr><td><a href="https://fontark.net/farkwp/" target="_blank">FontArk</a></td><td>Online (browser)</td><td>Free</td><td>Web app</td><td>Experimental, sign-up required</td></tr>
+      <tr><td><a href="https://www.glyphrstudio.com" target="_blank">Glyphr Studio</a></td><td>Online (browser)</td><td>Free</td><td>Web app</td><td>Great free option</td></tr>
+      <tr><td><a href="https://www.cr8software.net/type.html" target="_blank">Type 3.2</a></td><td>Windows, macOS</td><td>$ / € 40</td><td>Desktop app</td><td>Affordable, straightforward</td></tr>
+      <tr><td><a href="https://fontstruct.com" target="_blank">FontStruct</a></td><td>Online (browser)</td><td>Free</td><td>Web app</td><td>Grid-based font design</td></tr>
+      <tr><td><a href="https://www.calligraphr.com/en/pricing/" target="_blank">Calligraphr</a></td><td>Online (browser)</td><td>Free → $ / € 10/month</td><td>Web app</td><td>Handwriting to font conversion</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">
+    <h3>✅ Recommendations for Students</h3>
+    <ul>
+      <li><strong>Beginners:</strong> Try <a href="https://birdfont.org" target="_blank">BirdFont</a>, <a href="https://fontstruct.com" target="_blank">FontStruct</a>, <a href="https://www.glyphrstudio.com" target="_blank">Glyphr Studio</a>, or <a href="https://www.calligraphr.com/en/" target="_blank">Calligraphr</a></li>
+      <li><strong>Adobe Users:</strong> <a href="https://www.fontself.com/store" target="_blank">FontSelf</a> works well with Illustrator</li>
+      <li><strong>Mac Users (Advanced):</strong> Consider <a href="https://glyphsapp.com" target="_blank">Glyphs Mini</a> or <a href="https://robofont.com" target="_blank">RoboFont</a></li>
+      <li><strong>Windows Users (Advanced):</strong> <a href="https://www.high-logic.com/" target="_blank">FontCreator</a> or <a href="https://www.fontlab.com" target="_blank">FontLab</a></li>
+      <li><strong>Open Source Fans:</strong> <a href="https://fontforge.github.io" target="_blank">FontForge</a> is free and powerful</li>
+    </ul>
+  </div>
+</div>
+
+<div id="motion" class="motion-section">
+  <h2><strong>For Motion Designers (Intermediate – Advanced)</strong></h2>
+  <p><em>Essential After Effects expressions for dynamic motion graphics and animation workflows.</em></p>
+  
+  <table id="expressionTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable('expressionTable', 0)">#</th>
+        <th onclick="sortTable('expressionTable', 1)">Expression</th>
+        <th onclick="sortTable('expressionTable', 2)">Apply To</th>
+        <th onclick="sortTable('expressionTable', 3)">What It Does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><span class="expression-code">time * 45</span></td><td>Rotation</td><td>Rotates the object 45° per second (continuous spin)</td></tr>
+      <tr><td>2</td><td><span class="expression-code">wiggle(2, 30)</span></td><td>Position / Rotation / Scale</td><td>Adds jittering or random motion: 2 wiggles/sec, 30px/° range</td></tr>
+      <tr><td>3</td><td><span class="expression-code">loopOut("cycle")</span></td><td>Any property with 2+ keyframes</td><td>Loops the last keyframes in a seamless cycle</td></tr>
+      <tr><td>4</td><td><span class="expression-code">loopOut("pingpong")</span></td><td>Any property with keyframes</td><td>Moves back and forth between keyframes (like a yo-yo)</td></tr>
+      <tr><td>5</td><td><span class="expression-code">Math.sin(time * 2) * 50 + 50</span></td><td>Opacity</td><td>Creates a smooth fade in/out loop between 0–100%</td></tr>
+      <tr><td>6</td><td><span class="expression-code">s = Math.sin(time * 3) * 20 + 100; [s, s]</span></td><td>Scale</td><td>Makes the object pulse between 80–120% (breathe effect)</td></tr>
+      <tr><td>7</td><td><span class="expression-code">y = Math.sin(time * 2) * 10; value + [0, y]</span></td><td>Position</td><td>Adds gentle floating (up/down) motion</td></tr>
+      <tr><td>8</td><td><span class="expression-code">valueAtTime(time - index * 0.2)</span></td><td>Any animated property</td><td>Delays animation for each layer in a sequence</td></tr>
+      <tr><td>9</td><td><span class="expression-code">seedRandom(index, true); wiggle(1, 20)</span></td><td>Position</td><td>Each layer wiggles differently (good for motion systems)</td></tr>
+      <tr><td>10</td><td><span class="expression-code">Math.floor(time % 1) == 0 ? 100 : 0</span></td><td>Opacity</td><td>Makes a blinking effect — on/off once per second</td></tr>
+      <tr><td>11</td><td><span class="expression-code">linear(time % 2, 0, 2, 0, 100)</span></td><td>Opacity</td><td>Fades from 0 to 100 over 2 seconds, then resets</td></tr>
+      <tr><td>12</td><td><span class="expression-code">loopDuration = 2; t = time % loopDuration; t * 180</span></td><td>Rotation</td><td>Rotates smoothly from 0°–360° in 2s and loops</td></tr>
+      <tr><td>13</td><td><span class="expression-code">color1 = [1,0,0,1]; color2 = [0,0,1,1]; t = (Math.sin(time*2)+1)/2; linear(t,0,1,color1,color2)</span></td><td>Fill > Color (or Color Control)</td><td>Transitions between red and blue in a smooth loop</td></tr>
+      <tr><td>14</td><td><span class="expression-code">freq = 3; amp = 25; value + [Math.sin(time*freq)*amp, 0]</span></td><td>Position</td><td>Loops side-to-side motion like a swinging sign</td></tr>
+      <tr><td>15</td><td><span class="expression-code">vel = velocityAtTime(time - thisComp.frameDuration); amp = 0.05; freq = 4; decay = 2; vel * amp * Math.sin(freq*time*2*Math.PI)/Math.exp(decay*time)</span></td><td>Position (after keyframes)</td><td>Adds bounce after movement (natural physics feel)</td></tr>
+      <tr><td>16</td><td><span class="expression-code">timeToFrames(time) % 2 == 0 ? value : value + 10</span></td><td>Position or Opacity</td><td>Alternates value every other frame (flashing or choppy motion)</td></tr>
+      <tr><td>17</td><td><span class="expression-code">thisComp.layer("Null 1").transform.position</span></td><td>Any transform property</td><td>Links this property to another layer's property</td></tr>
+      <tr><td>18</td><td><span class="expression-code">ease(time % 2, 0, 2, 0, 100)</span></td><td>Opacity</td><td>Smoothly eases opacity from 0 to 100 and resets every 2s</td></tr>
+      <tr><td>19</td><td><span class="expression-code">value + wiggle(1,10) - value</span></td><td>Position</td><td>Creates a shake around the current position (subtle)</td></tr>
+      <tr><td>20</td><td><span class="expression-code">loopOut("offset")</span></td><td>Position / Rotation / Scale</td><td>Repeats movement, adding the offset each cycle (like continuous scrolling or rotation)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section">
+    <h3>🎯 Quick Reference Tips</h3>
+    <ul>
+      <li><strong>Time-based animations:</strong> Use <span class="expression-code">time</span> variable for continuous motion</li>
+      <li><strong>Randomization:</strong> <span class="expression-code">wiggle()</span> and <span class="expression-code">seedRandom()</span> for organic movement</li>
+      <li><strong>Looping:</strong> <span class="expression-code">loopOut()</span> variations for seamless cycles</li>
+      <li><strong>Math functions:</strong> <span class="expression-code">Math.sin()</span>, <span class="expression-code">Math.cos()</span> for smooth oscillations</li>
+      <li><strong>Layer relationships:</strong> Use <span class="expression-code">index</span> and <span class="expression-code">thisComp.layer()</span> for complex animations</li>
+    </ul>
+  </div>
 </div>
 
 <script>
-  let sortDirection = [];
+  let sortDirection = {};
 
-  function sortTable(columnIndex) {
-    const table = document.getElementById("fontTable");
+  function sortTable(tableId, columnIndex) {
+    const table = document.getElementById(tableId);
     const rows = Array.from(table.rows).slice(1);
     const header = table.rows[0].cells[columnIndex];
-    const isAscending = sortDirection[columnIndex] = !sortDirection[columnIndex];
+    const sortKey = `${tableId}-${columnIndex}`;
+    const isAscending = sortDirection[sortKey] = !sortDirection[sortKey];
 
     rows.sort((rowA, rowB) => {
-      const a = rowA.cells[columnIndex].textContent.trim().toLowerCase();
-      const b = rowB.cells[columnIndex].textContent.trim().toLowerCase();
+      let a = rowA.cells[columnIndex].textContent.trim().toLowerCase();
+      let b = rowB.cells[columnIndex].textContent.trim().toLowerCase();
+      
+      // Handle numeric sorting for the # column
+      if (columnIndex === 0 && tableId === 'expressionTable') {
+        a = parseInt(a) || 0;
+        b = parseInt(b) || 0;
+      }
+      
       return (a > b ? 1 : a < b ? -1 : 0) * (isAscending ? 1 : -1);
     });
 
-    // Remove sort classes from all headers
+    // Remove sort classes from all headers in this table
     Array.from(table.rows[0].cells).forEach(cell => {
       cell.classList.remove("sort-asc", "sort-desc");
     });
@@ -122,6 +226,15 @@
 
     rows.forEach(row => table.tBodies[0].appendChild(row));
   }
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 </script>
 
 </body>
